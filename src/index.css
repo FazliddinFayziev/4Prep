@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-color: #07090D;
+    --white: #fff;
+    --black: #000;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+html {
+    font-family: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--white);
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px var(--white);
+    -webkit-text-fill-color: transparent;
+    color: var(--bg-color);
+    font-weight: 900;
+}
