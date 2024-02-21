@@ -1,23 +1,23 @@
-import React from 'react'
+// Home Component
+import React, { useRef } from 'react'
 import { useGlobalContext } from '../context/context'
-import { Navbar, Herobanner, Measure, About, Service, Team, Testimonials, Faqs, Footer } from '../components';
+import { Navbar, Herobanner, Measure, About, Service, Testimonials, Faqs, Footer, Partners } from '../components';
 
 const Home = () => {
-
     const { home } = useGlobalContext();
 
     return (
-        <div className=''>
-            <Navbar />
-            <Herobanner />
-            <Measure />
-            <About />
-            <Service />
-            <Team />
-            <Testimonials />
-            <Faqs />
-            <Footer />
-        </div>
+      <>
+        <Navbar />
+        <Herobanner />
+        <Measure />
+        <About />
+        <Service />
+        <Partners />
+        <Testimonials />
+        <Faqs />
+        <Footer />
+      </>
     )
 }
 

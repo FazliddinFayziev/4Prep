@@ -22,7 +22,7 @@ const Measure = () => {
           ),
         },
       ]}
-      className="aspect-[2/1] lg:aspect-[3/1]"
+      className="aspect-[2/1] lg:aspect-[3/1] second-section"
     />
   );
 }

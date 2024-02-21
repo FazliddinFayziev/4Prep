@@ -42,7 +42,7 @@ const Herobanner = () => {
             </Parallax>
           ))}
           <Parallax className="pic" y={[50, -50]}>
-            <p className="py-6 text-2xl font-semibold">Discover New Opportunities and Ideas with Our Global Student Community!</p>
+            <p className="py-6 mt-8 text-2xl font-semibold">Discover New Opportunities and Ideas with Our Global Student Community!</p>
           </Parallax>
           <button className="hero_button border px-10 py-4 rounded-full font-bold">
             Become a student

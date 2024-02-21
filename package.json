@@ -8,14 +8,18 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
+    "imagesloaded": "^5.0.0",
+    "locomotive-scroll": "^4.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-locomotive-scroll": "^0.2.2",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.4.5",
     "react-spring": "^9.7.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

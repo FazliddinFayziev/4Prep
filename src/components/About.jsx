@@ -41,10 +41,14 @@ const About = () => {
       <div className='mx-6 mt-[-70px]'>
         <div className="collapse bg-transparent text-2xl lg:text-4xl focus:bg-secondary focus:text-secondary-content">
           <div className="collapse-title">
-            <span className='font-bold text-justify'>Welcome to 4prep, your trusted partner in unlocking the doors to prestigious American universities.</span>
-            <p className='font-thin text-justify mt-4'>
-              At 4prep, we are dedicated to empowering students worldwide to pursue their dreams of studying in the United States. With our comprehensive suite of services, we guide aspiring scholars through every step of the journey, from university admissions to securing scholarships and navigating the complex visa application process.
-            </p>
+            <Parallax className="pic" y={[50, -50]}>
+              <span className='font-bold text-justify'>Welcome to 4prep, your trusted partner in unlocking the doors to prestigious American universities.</span>
+            </Parallax>
+            <Parallax className="pic" y={[50, -50]}>
+              <p className='font-thin text-justify mt-4'>
+                At 4prep, we are dedicated to empowering students worldwide to pursue their dreams of studying in the United States. With our comprehensive suite of services, we guide aspiring scholars through every step of the journey, from university admissions to securing scholarships and navigating the complex visa application process.
+              </p>
+            </Parallax>
           </div>
         </div>
       </div>
