@@ -1,5 +1,5 @@
 import { useTrail, a } from '@react-spring/web';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, useParallax } from 'react-scroll-parallax';
 import React, { useEffect, useState } from 'react'
 
 const Testimonials = () => {
@@ -40,14 +40,16 @@ const Testimonials = () => {
         ))}
       </div>
 
-      <div className='flex justify-center items-center'>
-        <div className="mockup-phone mt-12 mx-8">
-          <div className="camera"></div> 
-          <div className="display">
-            <div className="artboard artboard-demo phone-1">Hi.</div>
-          </div>
+        <div className='flex justify-center items-center overflow-hidden'>
+          <Parallax rotate={[-90, 180]}>
+              <div className="mockup-phone mt-12 mx-8">
+                <div className="camera"></div> 
+                <div className="display">
+                  <div className="artboard artboard-demo phone-1">Hi.</div>
+                </div>
+              </div>
+          </Parallax>
         </div>
-      </div>
 
     </div>
   )
