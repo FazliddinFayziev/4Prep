@@ -1,11 +1,56 @@
 import { useTrail, a } from '@react-spring/web';
 import { Parallax, useParallax } from 'react-scroll-parallax';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
+import person_1 from "../img/person_1.webp";
+import person_2 from "../img/person_2.jpg";
+import person_3 from "../img/person_3.jpg";
+
+const data = [
+  {
+    id: 0,
+    name: "Fazliddin",
+    feedback: "Thanks to 4prep, I felt fully prepared for my visa interviews and scholarship applications. Highly recommend!"
+  },
+  {
+    id: 1,
+    name: "Fazliddin",
+    feedback: "Great help from 4prep with visa interviews and scholarships. Highly satisfied!"
+  },
+  {
+    id: 2,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 3,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 4,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 5,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+]
 
 const Testimonials = () => {
 
   const [scrollY, setScrollY] = useState(0);
   const items = ['Testimonials'];
+
+  const small_settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 600,
+    centerMode: true,
+  };
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 500, friction: 100 },
@@ -40,16 +85,97 @@ const Testimonials = () => {
         ))}
       </div>
 
-        <div className='flex justify-center items-center overflow-hidden'>
-          <Parallax rotate={[-90, 180]}>
-              <div className="mockup-phone mt-12 mx-8">
-                <div className="camera"></div> 
-                <div className="display">
-                  <div className="artboard artboard-demo phone-1">Hi.</div>
+      <div className='testimonials_section flex justify-center items-center overflow-hidden h-[120vh]'>
+        <Parallax rotate={[-60, 60]}>
+            <div className="mockup-phone mt-12 mx-8">
+              <div className="camera"></div> 
+              <div className="display">
+                <div className="phone_bg artboard artboard-demo phone-1">
+                  {/* MESSAGE ONE */}
+                  <div className='flex justify-start w-full'>
+                    <div class="chat chat-start mx-4 flex justify-start">
+                      <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                          <img alt="Tailwind CSS chat bubble component" src={person_1} />
+                        </div>
+                      </div>
+                      <div class="chat-bubble">Thanks to 4prep, I felt fully prepared for my visa interviews and scholarship applications. Highly recommend!</div>
+                    </div>
+                  </div>
+                  {/* MESSAGE TWO */}
+                  <div className='flex justify-end w-full'>
+                    <div className="chat chat-end">
+                      <div className="chat-image avatar">
+                        <div className="w-10 rounded-full">
+                          <img alt="Tailwind CSS chat bubble component" src={person_2} />
+                        </div>
+                      </div>
+                      <div className="chat-bubble">Great help from 4prep with visa interviews and scholarships. Highly satisfied!</div>
+                    </div>
+                  </div>
+                  {/* MESSAGE THREE */}
+                  <div className='flex justify-start w-full'>
+                    <div class="chat chat-start mx-4 flex justify-start">
+                      <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                          <img alt="Tailwind CSS chat bubble component" src={person_3} />
+                        </div>
+                      </div>
+                      <div class="chat-bubble">Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-          </Parallax>
-        </div>
+            </div>
+        </Parallax>
+      </div>
+
+      <div class="slider">
+	      <div class="slide-track">
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+	      	</div>
+	      	<div class="slide">
+	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+	      	</div>
+	      </div>
+      </div>
 
     </div>
   )

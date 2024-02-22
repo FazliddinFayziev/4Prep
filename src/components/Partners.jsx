@@ -34,7 +34,7 @@ const data_2 = [
 const Partners = () => {
 
   const [scrollY, setScrollY] = useState(0);
-  const items = ['Dream', 'Selection'];
+  const items = ['Our', 'Family'];
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 500, friction: 100 },
@@ -105,6 +105,12 @@ const Partners = () => {
         	    </Parallax>
         	</div>
 		</div>
+		
+		<div className='flex justify-center my-4'>
+			<button className="hero_button border px-20 py-5 rounded-full font-bold">
+            	Show More
+          	</button>
+        </div>
 
     </div>
   )
