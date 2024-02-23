@@ -1,6 +1,7 @@
-import { useTrail, a } from '@react-spring/web';
-import { Parallax, useParallax } from 'react-scroll-parallax';
-import React, { useEffect, useRef, useState } from 'react';
+import { useTrail } from '@react-spring/web';
+import { Parallax } from 'react-scroll-parallax';
+import React, { useEffect, useState } from 'react';
+import { FaUserAlt } from "react-icons/fa";
 import person_1 from "../img/person_1.webp";
 import person_2 from "../img/person_2.jpg";
 import person_3 from "../img/person_3.jpg";
@@ -36,21 +37,37 @@ const data = [
     name: "Fazliddin",
     feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
   },
+  {
+    id: 6,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 7,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 8,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 9,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
+  {
+    id: 10,
+    name: "Fazliddin",
+    feedback: "Fantastic support from 4prep for visa interviews and scholarship guidance. Highly recommended!"
+  },
 ]
 
 const Testimonials = () => {
 
   const [scrollY, setScrollY] = useState(0);
   const items = ['Testimonials'];
-
-  const small_settings = {
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 600,
-    centerMode: true,
-  };
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 500, friction: 100 },
@@ -90,7 +107,7 @@ const Testimonials = () => {
             <div className="mockup-phone mt-12 mx-8">
               <div className="camera"></div> 
               <div className="display">
-                <div className="phone_bg artboard artboard-demo phone-1">
+                <div className="phone_bg artboard artboard-demo phone-1 font-thin">
                   {/* MESSAGE ONE */}
                   <div className='flex justify-start w-full'>
                     <div class="chat chat-start mx-4 flex justify-start">
@@ -130,50 +147,47 @@ const Testimonials = () => {
         </Parallax>
       </div>
 
+      {/* SLIDER_1 */}
       <div class="slider">
 	      <div class="slide-track">
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-	      	</div>
-	      	<div class="slide">
-	      		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-	      	</div>
+          {data.map((slide) => {
+            const {id, name, feedback} = slide
+            return (
+              <div key={id} class="slide">
+                <div>
+	      		      <p className='font-thin'>{feedback}</p>
+                </div>
+                <div className='mt-4 text-[#37DCBB]'>
+                  <p className='flex items-center gap-4'>
+                    <FaUserAlt />
+                    {name}
+                  </p>
+                </div>
+	      	    </div>
+            )
+          })}
+	      </div>
+      </div>
+
+      {/* SLIDER_2 */}
+      <div class="slider_2">
+	      <div class="slide-track_2">
+          {data.map((slide) => {
+            const {id, name, feedback} = slide
+            return (
+              <div key={id} class="slide_2">
+                <div>
+	      		      <p className='font-thin'>{feedback}</p>
+                </div>
+                <div className='mt-4 text-[#37DCBB]'>
+                  <p className='flex items-center gap-4'>
+                    <FaUserAlt />
+                    {name}
+                  </p>
+                </div>
+	      	    </div>
+            )
+          })}
 	      </div>
       </div>
 

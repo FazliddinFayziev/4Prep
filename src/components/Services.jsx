@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTrail, a } from '@react-spring/web';
 import { Parallax } from 'react-scroll-parallax';
-import { GrDocumentConfig } from "react-icons/gr";
 import hat from "../img/hat.png";
 import zoom from "../img/zoom.png";
 
@@ -66,7 +65,7 @@ const Services = () => {
                   <div className="card card-compact w-90 bg-tranparent shadow-xl mx-4">
                     <figure className='opacity-40'><img src={img} alt="Shoes" /></figure>
                     <div className="card-body">
-                      <h2 className="card-title text-center">{text}</h2>
+                      <h2 className="card-title text-center font-thin">{text}</h2>
                     </div>
                   </div>
                 </Parallax>
