@@ -1,5 +1,4 @@
 import React from 'react'
-import img from '../img/art-2.gif'
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 const Measure = () => {

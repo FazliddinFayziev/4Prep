@@ -1,26 +1,31 @@
+import AOS from 'aos';
 import React, { useEffect, useState } from 'react';
 import { useTrail, a } from '@react-spring/web';
 import { Parallax } from 'react-scroll-parallax';
 import hat from "../img/hat.png";
-import zoom from "../img/zoom.png";
-
-const data = [
-  {
-    id: 0,
-    img: hat,
-    text: "Unlocking Opportunities: Your Comprehensive Guide to Scholarships, Grants, and Financial Aid"
-  },
-  {
-    id: 1,
-    img: zoom,
-    text: "Navigate the Visa Maze: Your Visa & Immigration Resource Hub"
-  }
-]
+import zoom from "../img/zoom.jpg";
+import { useGlobalContext } from '../context/context';
+import { languageChange } from '../context/functions';
 
 const Services = () => {
 
+  const {language} = useGlobalContext();
+
+  const data = [
+    {
+      id: 0,
+      img: hat,
+      text: languageChange(language).service_study
+    },
+    {
+      id: 1,
+      img: zoom,
+      text: languageChange(language).service_visa
+    }
+  ]
+
   const [scrollY, setScrollY] = useState(0);
-  const items = ['Our', 'Services'];
+  const items = [languageChange(language).service_title_one, languageChange(language).service_title_two];
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 500, friction: 100 },
@@ -31,44 +36,38 @@ const Services = () => {
   });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    AOS.init();
+  }, [])
 
 
   return (
-    <div className='w-full h-full my-10'>
-      <div className="about-us flex justify-center mt-4">
+    <div className='service_section w-full h-full my-10'>
+      <div data-aos="fade-up" data-aos-duration="3000" className="about-us flex justify-center mt-4">
         {trail.map((style, index) => (
-          <Parallax key={index} className="pic" y={[50, -50]}>
-            <a.h1 className="text-outline text-5xl mt-12 lg:text-8xl lg:mt-1 mb-4" style={style}>
+          <Parallax key={index}>
+            <h1 className="text-outline text-5xl mt-12 lg:text-8xl lg:mt-1 mb-4" style={style}>
               {items[index]}
               <div className="absolute w-full h-[120px] mt-[-110px]">
                 <div className="half h-full"></div>
               </div>
-            </a.h1>
+            </h1>
           </Parallax>
         ))}
       </div>
-      <div className="services-section mt-[-150px]">
+      <div className="services-section">
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
           {
             data.map((card) => {
               const { id, img, text } = card
               return (
-                <Parallax key={id} className="pic" y={[50, -50]}>
-                  <div className="card card-compact w-90 bg-tranparent shadow-xl mx-4">
+                <div className='service_card' key={id}>
+                  <div data-aos="fade-up" data-aos-duration="3000" className="card card-compact w-90 bg-tranparent shadow-xl mx-4">
                     <figure className='opacity-40'><img src={img} alt="Shoes" /></figure>
                     <div className="card-body">
-                      <h2 className="card-title text-center font-thin">{text}</h2>
+                      <h2 className="card-title text-center font-thin p-10">{text}</h2>
                     </div>
                   </div>
-                </Parallax>
+                </div>
               )
             })
           }

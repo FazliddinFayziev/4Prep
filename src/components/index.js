@@ -1,5 +1,7 @@
+export {default as News} from "./News";
 export {default as Faqs} from "./Faqs";
 export {default as About} from "./About";
+export {default as Univer} from "./Univer";
 export {default as Navbar} from "./Navbar";
 export {default as Footer} from "./Footer";
 export {default as Measure} from "./Measure";

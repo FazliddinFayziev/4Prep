@@ -1,18 +1,19 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Login, Error } from "./Pages";
+import { Home,  Error, Contact } from "./Pages";
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Loading from "./components/Loading";
 
 
 function App() {
-  const containerRef = useRef(null)
   return (
     <>
       <ParallaxProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
+          <Route path="/loading" element={<Loading />} />
         </Routes>
       </ParallaxProvider>
     </>

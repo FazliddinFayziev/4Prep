@@ -1,40 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { useTrail, a } from '@react-spring/web';
 import { Parallax } from 'react-scroll-parallax';
-import img_1 from "../img/img_1.webp";
-import img_2 from "../img/img_2.jpg";
-import img_3 from "../img/img_3.jpg";
-import img_4 from "../img/img_4.jpg";
-import img_5 from "../img/img_5.jpg";
-import img_6 from "../img/img_6.jpg";
-import img_7 from "../img/img_7.jpg";
-import img_9 from "../img/img_9.jpg";
-import img_10 from "../img/img_10.jpeg";
-import img_11 from "../img/img_11.jpg";
-import img_12 from "../img/img_12.jpg";
+import { Link } from 'react-router-dom';
+import { useGlobalContext } from '../context/context';
+import { languageChange } from '../context/functions';
 
 const data_1 = [
-	{id: 1, img: img_1},
-	{id: 2, img: img_2},
-	{id: 3, img: img_3},
-	{id: 4, img: img_4},
-	{id: 5, img: img_5},
-	{id: 6, img: img_6},
+	{id: 1, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178735/noq2reybahfg5jifkims.png"},
+	{id: 2, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178734/qwy7c7vx6i8azjcmtbye.png"},
+	{id: 3, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178734/i8czhnpjhjhz4dzqevnp.png"},
+	{id: 4, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178734/gzl0vgbkjyxu4n1uttaz.png"},
+	{id: 5, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178734/bthlvnlunb81x9gej7wg.png"},
+	{id: 6, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178734/y14w2ig2iwqegvxszn7c.png"},
 ]
 
 const data_2 = [
-	{id: 1, img: img_1},
-	{id: 2, img: img_7},
-	{id: 3, img: img_9},
-	{id: 4, img: img_10},
-	{id: 5, img: img_11},
-	{id: 6, img: img_12},
+	{id: 1, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178733/tyavfovoxhylswpg3dfi.png"},
+	{id: 2, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178733/hf649l3fkjxwkmogr5a5.png"},
+	{id: 3, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178733/on5bwnp7l7jammr26jgj.png"},
+	{id: 4, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178733/awjowdadwblyjpwcsjbt.png"},
+	{id: 5, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178733/uobb2gnprhrf9jo2udwp.png"},
+	{id: 6, img: "https://res.cloudinary.com/dqhljaplg/image/upload/v1710178732/gad67itukoxkh3clp6ix.png"},
 ]
 
 const Partners = () => {
+	const {language} = useGlobalContext();
 
   const [scrollY, setScrollY] = useState(0);
-  const items = ['Our', 'Family'];
+  const items = [languageChange(language).family_title_one, languageChange(language).family_title_two];
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 500, friction: 100 },
@@ -56,7 +49,7 @@ const Partners = () => {
 
 
   return (
-    <div className='h-full'>
+    <div className='family_section h-full'>
       	<div className="about-us flex justify-center mt-8">
       	  {trail.map((style, index) => (
       	    <Parallax key={index} className="pic" y={[50, -50]}>
@@ -106,11 +99,13 @@ const Partners = () => {
         	</div>
 		</div>
 		
-		<div className='flex justify-center my-4'>
-			<button className="hero_button border px-20 py-5 rounded-full font-bold">
-            	Show More
-          	</button>
-        </div>
+			<div className='flex justify-center my-4'>
+				<Link to={'https://four-prep-gallery.web.app/'}>
+					<button className="hero_button border px-20 py-5 rounded-full font-bold">
+        				{languageChange(language).family_button}
+        			</button>
+				</Link>
+        	</div>
 
     </div>
   )

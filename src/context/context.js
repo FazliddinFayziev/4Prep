@@ -1,9 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 const AppContext = React.createContext();
 
 
 export const AppProvider = ({ children }) => {
+    
+    const [userLanguage, setUserLanguage] = useState('eng');
+
+    const getStoredLanguage = () => {
+        const storedLanguage = localStorage.getItem('language');
+        return storedLanguage ? JSON.parse(storedLanguage) : { eng: true, uz: false, ru: false };
+    };
+    
+    const [language, setLanguage] = useState(getStoredLanguage());
+    
+    const changeLanguage = (selectedLanguage) => {
+        setUserLanguage(selectedLanguage);
+        setLanguage({ eng: false, uz: false, ru: false }); 
+        setLanguage(prevLanguage => ({ ...prevLanguage, [selectedLanguage]: true }));
+    };
+
+    useEffect(() => {
+        localStorage.setItem('language', JSON.stringify(language));
+    }, [language]);
+
 
     // Text - 1
     const home = "Home"
@@ -17,7 +37,10 @@ export const AppProvider = ({ children }) => {
     return <AppContext.Provider value={{
 
         // export all elements
-        home, login, error
+        home, login, error,
+        changeLanguage,
+        language, setLanguage, 
+        userLanguage, setUserLanguage,
 
     }}>
         {children}
